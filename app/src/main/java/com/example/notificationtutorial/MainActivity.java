@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
                 Notification notification = new NotificationCompat.Builder(this, "myapp")
                         .setSmallIcon(android.R.drawable.stat_notify_chat)
-                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_foreground))
                         .setContentTitle("my notification")
                         .setContentText("This is my first notification")
+                        .setContentIntent(pendingIntent)
                         .build();
                 NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                 notificationManager.notify(1001, notification);
